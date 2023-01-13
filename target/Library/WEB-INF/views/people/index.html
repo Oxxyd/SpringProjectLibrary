@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+</head>
+<body>
+<h3>
+<div th:each="person : ${people}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getFullName() + ', ' + person.getYearBorn()}">user</a>
+</div>
+</h3>
+
+<hr/>
+<a href="people/new"> Добавить человека </a>
+<br/>
+<br/>
+<form method="get" action="/books">
+    <input type="submit" value="Перейти к библиотеке книг ->">
+</form>
+</body>
+</html>
